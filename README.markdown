@@ -6,23 +6,23 @@ Perform the following on a build box as a regular user.
 
 Install rpmdevtools from the [EPEL][epel] repository:
 
-    ```bash
-    $ sudo yum install rpmdevtools pcre-devel
-    $ rpmdev-setuptree
-    ```
+```bash
+$ sudo yum install rpmdevtools pcre-devel
+$ rpmdev-setuptree
+```
 
 ## Install Prerequisites for RPM Creation
 
-    ```bash
-    $ sudo yum groupinstall 'Development Tools'
-    $ sudo yum install openssl-devel
-    ```
+```bash
+$ sudo yum groupinstall 'Development Tools'
+$ sudo yum install openssl-devel
+```
 
 ## Download haproxy and build the RPM file
 
-    ```bash
-    $ make build
-    ```
+```bash
+$ make build
+```
 
 The resulting RPM will be the `rpmbuild/i686` directory in your git `rpm-haproxy` folder.
 
