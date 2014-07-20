@@ -6,31 +6,32 @@ Perform the following on a build box as a regular user.
 
 Install rpmdevtools from the [EPEL][epel] repository:
 
-    sudo yum install rpmdevtools pcre-devel
-    rpmdev-setuptree
+    ```bash
+    $ sudo yum install rpmdevtools pcre-devel
+    $ rpmdev-setuptree
+    ```
 
 ## Install Prerequisites for RPM Creation
 
-    sudo yum groupinstall 'Development Tools'
-    sudo yum install openssl-devel
+    ```bash
+    $ sudo yum groupinstall 'Development Tools'
+    $ sudo yum install openssl-devel
+    ```
 
-## Download haproxy
+## Download haproxy and build the RPM file
 
-    wget http://www.haproxy.org/download/1.5/src/haproxy-1.5.0.tar.gz
-    mv haproxy-1.5.0.tar.gz ~/rpmbuild/SOURCES/
+    ```bash
+    $ make build
+    ```
 
-## Get Necessary System-specific Configs
+The resulting RPM will be the `rpmbuild/i686` directory in your git `rpm-haproxy` folder.
 
-    git clone git://github.com/bluerail/haproxy-centos.git
-    cp haproxy-centos/conf/* ~/rpmbuild/SOURCES/
-    cp haproxy-centos/spec/* ~/rpmbuild/SPECS/
+Files created should look something similar to this:
 
-## Build the RPM
-
-    cd ~/rpmbuild/
-    rpmbuild -ba SPECS/haproxy.spec
-
-The resulting RPM will be in ~/rpmbuild/RPMS/x86_64
+```bash
+haproxy-1.5.2-11.amzn1.i686.rpm
+haproxy-debuginfo-1.5.2-11.amzn1.i686.rpm
+```
 
 ## Credits
 
