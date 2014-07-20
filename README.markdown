@@ -18,7 +18,7 @@ $ sudo yum groupinstall 'Development Tools'
 $ sudo yum install openssl-devel
 ```
 
-## Download haproxy and build the RPM file
+## Build the RPM file
 
 ```bash
 $ make build
@@ -29,6 +29,7 @@ The resulting RPM will be the `rpmbuild/i686` directory in your git `rpm-haproxy
 Files created should look something similar to this:
 
 ```bash
+$ ls
 haproxy-1.5.2-11.amzn1.i686.rpm
 haproxy-debuginfo-1.5.2-11.amzn1.i686.rpm
 ```
